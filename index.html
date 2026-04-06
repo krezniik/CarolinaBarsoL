@@ -776,7 +776,7 @@
         Cuéntame sobre tu evento y te enviaré una propuesta personalizada. Reservaciones con mínimo 7 días de anticipación.
       </p>
 
-      <form class="contacto-form fade-in" name="contacto" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+      <form class="contacto-form fade-in" name="contacto" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contacto">
         <div class="form-row">
           <div class="form-group">
@@ -871,7 +871,7 @@
 
   document.querySelectorAll('.fade-in.animate').forEach(el => observer.observe(el));
 
-  function handleSubmit(event) {
+  document.querySelector('form[name="contacto"]').addEventListener('submit', function(event) {
     event.preventDefault();
     const form = event.target;
     const btn = document.getElementById('submit-btn');
@@ -883,13 +883,17 @@
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(new FormData(form)).toString()
     })
-      .then(() => {
-        form.innerHTML = '<p style="text-align:center;color:var(--gold);font-family:var(--serif);font-size:1.2rem;padding:2rem 0;">¡Gracias! Te contactaré pronto ✦</p>';
+      .then(function(response) {
+        if (response.ok) {
+          form.innerHTML = '<p style="text-align:center;color:var(--gold);font-family:var(--serif);font-size:1.2rem;padding:2rem 0;">¡Gracias! Te contactaré pronto ✦</p>';
+        } else {
+          throw new Error('Error en el servidor');
+        }
       })
-      .catch(() => {
+      .catch(function() {
         btn.textContent = 'Enviar solicitud';
         btn.disabled = false;
         alert('Ocurrió un error al enviar. Por favor intenta de nuevo.');
       });
-  }
+  });
 
