@@ -26,7 +26,7 @@
 <!-- Canonical -->
 <link rel="canonical" href="https://carolinabarso.com/">
 
-<!-- Favicon (reemplaza con tu archivo real) -->
+<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -55,7 +55,6 @@
     overflow-x: hidden;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -76,11 +75,7 @@
     color: var(--gold-light);
   }
 
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
   .nav-links a {
     font-size: 0.7rem;
@@ -93,7 +88,6 @@
 
   .nav-links a:hover { color: var(--gold-light); }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -133,10 +127,7 @@
     margin-bottom: 0.3rem;
   }
 
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold-light);
-  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
 
   .hero-subtitle {
     font-family: 'Cormorant Garamond', serif;
@@ -164,12 +155,7 @@
     margin-bottom: 3rem;
   }
 
-  .cta-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
   .btn-primary {
     background: var(--gold);
@@ -235,15 +221,8 @@
     50% { transform: translateX(-50%) translateY(6px); }
   }
 
-  /* SECTION BASE */
-  section {
-    padding: 6rem 2rem;
-  }
-
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  section { padding: 6rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
 
   .section-label {
     font-size: 0.6rem;
@@ -267,7 +246,6 @@
 
   .section-title em { font-style: italic; color: var(--gold-light); }
 
-  /* SERVICIOS */
   #servicios { background: var(--noir-2); }
 
   .servicios-grid {
@@ -301,11 +279,7 @@
   .servicio-card:hover { background: var(--noir-3); }
   .servicio-card:hover::before { opacity: 1; }
 
-  .servicio-icon {
-    font-size: 1.8rem;
-    margin-bottom: 1.2rem;
-    display: block;
-  }
+  .servicio-icon { font-size: 1.8rem; margin-bottom: 1.2rem; display: block; }
 
   .servicio-name {
     font-family: 'Cormorant Garamond', serif;
@@ -316,12 +290,7 @@
     margin-bottom: 0.8rem;
   }
 
-  .servicio-desc {
-    font-size: 0.75rem;
-    line-height: 1.85;
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-  }
+  .servicio-desc { font-size: 0.75rem; line-height: 1.85; color: var(--text-muted); letter-spacing: 0.04em; }
 
   .servicio-price {
     display: inline-block;
@@ -334,7 +303,6 @@
     padding: 0.35rem 1rem;
   }
 
-  /* GALERÍA */
   #galeria { background: var(--noir); }
 
   .galeria-grid {
@@ -354,16 +322,8 @@
     transition: transform 0.4s;
   }
 
-  .galeria-item:first-child {
-    grid-row: span 2;
-    aspect-ratio: auto;
-  }
-
+  .galeria-item:first-child { grid-row: span 2; aspect-ratio: auto; }
   .galeria-item:hover { transform: scale(1.01); }
-
-  /* Para usar tus fotos reales, agrega un <img> dentro de .galeria-item así:
-     <img src="tu-foto.jpg" alt="descripción" style="width:100%;height:100%;object-fit:cover;">
-     y elimina el div .galeria-placeholder correspondiente */
 
   .galeria-placeholder {
     width: 100%;
@@ -386,20 +346,8 @@
     justify-content: center;
   }
 
-  .galeria-ornament svg {
-    width: 24px;
-    height: 24px;
-    fill: none;
-    stroke: var(--gold);
-    stroke-width: 1;
-  }
-
-  .galeria-tag {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
+  .galeria-ornament svg { width: 24px; height: 24px; fill: none; stroke: var(--gold); stroke-width: 1; }
+  .galeria-tag { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
 
   .galeria-overlay {
     position: absolute;
@@ -422,14 +370,9 @@
     letter-spacing: 0.05em;
   }
 
-  /* CONTACTO */
   #contacto { background: var(--noir-2); }
 
-  .contacto-inner {
-    max-width: 680px;
-    margin: 0 auto;
-    text-align: center;
-  }
+  .contacto-inner { max-width: 680px; margin: 0 auto; text-align: center; }
 
   .contacto-desc {
     font-size: 0.82rem;
@@ -440,24 +383,9 @@
     max-width: 440px;
   }
 
-  .contacto-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: left;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+  .contacto-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
 
   .form-group label {
     font-size: 0.6rem;
@@ -483,12 +411,9 @@
 
   .form-group input:focus,
   .form-group textarea:focus,
-  .form-group select:focus {
-    border-color: rgba(201,168,76,0.6);
-  }
+  .form-group select:focus { border-color: rgba(201,168,76,0.6); }
 
   .form-group select option { background: var(--noir-2); color: var(--cream); }
-
   .form-group textarea { resize: vertical; min-height: 120px; }
 
   .form-submit {
@@ -526,12 +451,7 @@
     transition: color 0.3s;
   }
 
-  .contacto-link-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-  }
+  .contacto-link-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
 
   .contacto-link-value {
     font-family: 'Cormorant Garamond', serif;
@@ -542,7 +462,6 @@
 
   .contacto-link:hover .contacto-link-value { color: var(--cream); }
 
-  /* FOOTER */
   footer {
     background: var(--noir);
     border-top: 0.5px solid rgba(201,168,76,0.1);
@@ -559,28 +478,11 @@
     margin-bottom: 1rem;
   }
 
-  .footer-text {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--text-muted);
-  }
+  .footer-text { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--text-muted); }
 
-  /* FADE IN ANIMATION */
-  .fade-in {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .fade-in.animate {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  .fade-in.animate.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .fade-in { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-in.animate { opacity: 0; transform: translateY(20px); }
+  .fade-in.animate.visible { opacity: 1; transform: translateY(0); }
 
   @media (max-width: 700px) {
     nav { padding: 1.2rem 1.5rem; }
@@ -594,9 +496,6 @@
 </head>
 <body>
 
-<!-- ============================================================
-     NAV — Cambia por el nombre real
-     ============================================================ -->
 <nav>
   <div class="nav-logo">Carolina Barsō</div>
   <ul class="nav-links">
@@ -606,9 +505,6 @@
   </ul>
 </nav>
 
-<!-- ============================================================
-     HERO — Cambia textos según la artista
-     ============================================================ -->
 <section class="hero">
   <p class="hero-eyebrow fade-in">Makeup Artist · Guatemala</p>
   <h1 class="hero-title fade-in">El arte<br>de <em>revelar</em><br>tu belleza</h1>
@@ -625,9 +521,6 @@
   <div class="scroll-hint">Descubrir</div>
 </section>
 
-<!-- ============================================================
-     SERVICIOS — Edita nombre, descripción y precio de cada card
-     ============================================================ -->
 <section id="servicios">
   <div class="section-inner">
     <p class="section-label fade-in">Lo que ofrezco</p>
@@ -638,54 +531,42 @@
       <div class="servicio-card">
         <span class="servicio-icon">✦</span>
         <h3 class="servicio-name">Novia & Quinceañera</h3>
-        <p class="servicio-desc">
-          Un look que dure toda la celebración. Incluye prueba previa, maquillaje nupcial de larga duración y retoque express el día del evento.
-        </p>
+        <p class="servicio-desc">Un look que dure toda la celebración. Incluye prueba previa, maquillaje nupcial de larga duración y retoque express el día del evento.</p>
         <span class="servicio-price">Desde Q 650</span>
       </div>
 
       <div class="servicio-card">
         <span class="servicio-icon">◈</span>
         <h3 class="servicio-name">Eventos & Gala</h3>
-        <p class="servicio-desc">
-          Para cenas de gala, premios, graduaciones y eventos corporativos. Elegancia que complementa tu atuendo y personalidad.
-        </p>
+        <p class="servicio-desc">Para cenas de gala, premios, graduaciones y eventos corporativos. Elegancia que complementa tu atuendo y personalidad.</p>
         <span class="servicio-price">Desde Q 350</span>
       </div>
 
       <div class="servicio-card">
-       <span class="servicio-icon">✧</span>
-       <h3 class="servicio-name">Maquillaje Artístico</h3>
-       <p class="servicio-desc">
-        Looks de fantasía, editorial y efectos especiales para producciones, obras, Halloween y sesiones conceptuales. Cada diseño, una expresión única de arte.
-       </p>
-       <span class="servicio-price">Desde Q 000</span>
+        <span class="servicio-icon">✧</span>
+        <h3 class="servicio-name">Maquillaje Artístico</h3>
+        <p class="servicio-desc">Looks de fantasía, editorial y efectos especiales para producciones, obras, Halloween y sesiones conceptuales. Cada diseño, una expresión única de arte.</p>
+        <span class="servicio-price">Desde Q 000</span>
       </div>
 
       <div class="servicio-card">
         <span class="servicio-icon">⬡</span>
         <h3 class="servicio-name">Sesión Fotográfica</h3>
-        <p class="servicio-desc">
-          Maquillaje editorial y conceptual diseñado para cámara. Coordinación con el fotógrafo para garantizar resultados perfectos en imagen.
-        </p>
+        <p class="servicio-desc">Maquillaje editorial y conceptual diseñado para cámara. Coordinación con el fotógrafo para garantizar resultados perfectos en imagen.</p>
         <span class="servicio-price">Desde Q 450</span>
       </div>
 
       <div class="servicio-card">
         <span class="servicio-icon">◉</span>
         <h3 class="servicio-name">Consultoría en Imagen Personal</h3>
-        <p class="servicio-desc">
-          Análisis de colorimetría, morfología facial y estilo personal para definir los looks que mejor proyectan tu identidad. Una sesión transformadora.
-        </p>
+        <p class="servicio-desc">Análisis de colorimetría, morfología facial y estilo personal para definir los looks que mejor proyectan tu identidad. Una sesión transformadora.</p>
         <span class="servicio-price">Desde Q 300</span>
       </div>
 
       <div class="servicio-card">
         <span class="servicio-icon">◇</span>
         <h3 class="servicio-name">Clase Personalizada</h3>
-        <p class="servicio-desc">
-          Aprende las técnicas que mejor se adaptan a tus facciones. Sesión 1:1 de 2 horas con guía completa de productos y pasos.
-        </p>
+        <p class="servicio-desc">Aprende las técnicas que mejor se adaptan a tus facciones. Sesión 1:1 de 2 horas con guía completa de productos y pasos.</p>
         <span class="servicio-price">Desde Q 400</span>
       </div>
 
@@ -693,10 +574,6 @@
   </div>
 </section>
 
-<!-- ============================================================
-     GALERÍA — Reemplaza cada .galeria-placeholder con:
-     <img src="tu-foto.jpg" alt="descripción" style="width:100%;height:100%;object-fit:cover;">
-     ============================================================ -->
 <section id="galeria">
   <div class="section-inner">
     <p class="section-label fade-in">Portafolio</p>
@@ -705,7 +582,6 @@
     <div class="galeria-grid fade-in">
 
       <div class="galeria-item">
-        <!-- FOTO 1 (grande, ocupa 2 filas) -->
         <div class="galeria-placeholder">
           <div class="galeria-ornament">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M12 14c-5 0-8 2-8 4v2h16v-2c0-2-3-4-8-4z"/></svg>
@@ -716,7 +592,6 @@
       </div>
 
       <div class="galeria-item">
-        <!-- FOTO 2 -->
         <div class="galeria-placeholder">
           <div class="galeria-ornament">
             <svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
@@ -727,7 +602,6 @@
       </div>
 
       <div class="galeria-item">
-        <!-- FOTO 3 -->
         <div class="galeria-placeholder">
           <div class="galeria-ornament">
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
@@ -738,7 +612,6 @@
       </div>
 
       <div class="galeria-item">
-        <!-- FOTO 4 -->
         <div class="galeria-placeholder">
           <div class="galeria-ornament">
             <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
@@ -749,7 +622,6 @@
       </div>
 
       <div class="galeria-item">
-        <!-- FOTO 5 -->
         <div class="galeria-placeholder">
           <div class="galeria-ornament">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
@@ -763,9 +635,6 @@
   </div>
 </section>
 
-<!-- ============================================================
-     CONTACTO — Cambia número de WhatsApp, Instagram y correo
-     ============================================================ -->
 <section id="contacto">
   <div class="section-inner">
     <div class="contacto-inner">
@@ -776,8 +645,9 @@
         Cuéntame sobre tu evento y te enviaré una propuesta personalizada. Reservaciones con mínimo 7 días de anticipación.
       </p>
 
-      <form class="contacto-form fade-in" name="contacto" method="POST" data-netlify="true">
+      <form class="contacto-form fade-in" name="contacto" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contacto">
+        <p style="display:none;"><input name="bot-field"></p>
         <div class="form-row">
           <div class="form-group">
             <label for="nombre">Nombre completo</label>
@@ -818,52 +688,41 @@
         <button type="submit" class="form-submit" id="submit-btn">Enviar solicitud</button>
       </form>
 
-      <!-- Cambia los href con el número y usuario reales -->
       <div class="contacto-alt fade-in">
         <a href="https://wa.me/50255626508" class="contacto-link">
           <span class="contacto-link-label">WhatsApp directo</span>
-          <span class="contacto-link-value">+502 55626508</span>
+          <span class="contacto-link-value">+502 5562-6508</span>
         </a>
         <a href="https://instagram.com/carolinabarso_" class="contacto-link">
           <span class="contacto-link-label">Instagram</span>
           <span class="contacto-link-value">@carolinabarso_</span>
         </a>
-        <a href="/cdn-cgi/l/email-protection#93fbfcfff2d3f0f2e1fcfffafdf2f1f2e1e0fcbdf0fcfe" class="contacto-link">
+        <a href="mailto:hola@carolinabarso.com" class="contacto-link">
           <span class="contacto-link-label">Correo</span>
-          <span class="contacto-link-value"><span class="__cf_email__" data-cfemail="bcd4d3d0ddfcdfddced3d0d5d2dddeddcecfd392dfd3d1">[email&#160;protected]</span></span>
+          <span class="contacto-link-value">hola@carolinabarso.com</span>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER — Cambia el nombre y año
-     ============================================================ -->
 <footer>
   <div class="footer-logo">Carolina Barsō</div>
   <div class="divider-gold" style="margin-bottom:1rem;"></div>
   <p class="footer-text">© 2025 · Makeup Artist · Guatemala City · Todos los derechos reservados</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Animaciones de entrada al hacer scroll
-  // Marcar elementos para animar solo los que están fuera del viewport inicial
+<script>
   const allFadeEls = document.querySelectorAll('.fade-in');
-  
   allFadeEls.forEach(el => {
     const rect = el.getBoundingClientRect();
-    if (rect.top > window.innerHeight) {
-      el.classList.add('animate');
-    }
+    if (rect.top > window.innerHeight) el.classList.add('animate');
   });
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, i * 80);
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
         observer.unobserve(entry.target);
       }
     });
@@ -871,29 +730,30 @@
 
   document.querySelectorAll('.fade-in.animate').forEach(el => observer.observe(el));
 
-  document.querySelector('form[name="contacto"]').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const form = event.target;
+  document.querySelector('form[name="contacto"]').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
     const btn = document.getElementById('submit-btn');
     btn.textContent = 'Enviando...';
     btn.disabled = true;
-
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(new FormData(form)).toString()
     })
-      .then(function(response) {
-        if (response.ok) {
-          form.innerHTML = '<p style="text-align:center;color:var(--gold);font-family:var(--serif);font-size:1.2rem;padding:2rem 0;">¡Gracias! Te contactaré pronto ✦</p>';
-        } else {
-          throw new Error('Error en el servidor');
-        }
-      })
-      .catch(function() {
-        btn.textContent = 'Enviar solicitud';
-        btn.disabled = false;
-        alert('Ocurrió un error al enviar. Por favor intenta de nuevo.');
-      });
+    .then(function(res) {
+      if (res.ok) {
+        form.innerHTML = '<p style="text-align:center;color:var(--gold);font-family:Cormorant Garamond,serif;font-size:1.2rem;padding:2rem 0;">¡Gracias! Te contactaré pronto ✦</p>';
+      } else {
+        throw new Error('Error');
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Enviar solicitud';
+      btn.disabled = false;
+      alert('Ocurrió un error al enviar. Por favor intenta de nuevo.');
+    });
   });
-
+</script>
+</body>
+</html>
