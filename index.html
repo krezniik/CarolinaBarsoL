@@ -776,24 +776,27 @@
         Cuéntame sobre tu evento y te enviaré una propuesta personalizada. Reservaciones con mínimo 7 días de anticipación.
       </p>
 
-      <form class="contacto-form fade-in" onsubmit="handleSubmit(event)">
+      <form class="contacto-form fade-in" name="contacto" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="contacto">
         <div class="form-row">
           <div class="form-group">
             <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" placeholder="Tu nombre">
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
           </div>
           <div class="form-group">
             <label for="telefono">WhatsApp</label>
-            <input type="tel" id="telefono" placeholder="+502 0000 0000">
+            <input type="tel" id="telefono" name="telefono" placeholder="+502 0000 0000">
           </div>
         </div>
         <div class="form-group">
           <label for="servicio">Tipo de servicio</label>
-          <select id="servicio">
+          <select id="servicio" name="servicio" required>
             <option value="" disabled selected>Selecciona un servicio</option>
             <option>Novia & Quinceañera</option>
             <option>Eventos & Gala</option>
+            <option>Maquillaje Artístico</option>
             <option>Sesión Fotográfica</option>
+            <option>Consultoría en Imagen Personal</option>
             <option>Clase Personalizada</option>
             <option>Otro</option>
           </select>
@@ -801,16 +804,16 @@
         <div class="form-row">
           <div class="form-group">
             <label for="fecha">Fecha del evento</label>
-            <input type="date" id="fecha">
+            <input type="date" id="fecha" name="fecha">
           </div>
           <div class="form-group">
             <label for="presupuesto">Presupuesto aproximado</label>
-            <input type="text" id="presupuesto" placeholder="Ej. Q 500 – Q 800">
+            <input type="text" id="presupuesto" name="presupuesto" placeholder="Ej. Q 500 – Q 800">
           </div>
         </div>
         <div class="form-group">
           <label for="mensaje">Cuéntame tu visión</label>
-          <textarea id="mensaje" placeholder="Describe el estilo que tienes en mente, colores, referencias..."></textarea>
+          <textarea id="mensaje" name="mensaje" placeholder="Describe el estilo que tienes en mente, colores, referencias..."></textarea>
         </div>
         <button type="submit" class="form-submit" id="submit-btn">Enviar solicitud</button>
       </form>
@@ -867,4 +870,26 @@
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.fade-in.animate').forEach(el => observer.observe(el));
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    })
+      .then(() => {
+        form.innerHTML = '<p style="text-align:center;color:var(--gold);font-family:var(--serif);font-size:1.2rem;padding:2rem 0;">¡Gracias! Te contactaré pronto ✦</p>';
+      })
+      .catch(() => {
+        btn.textContent = 'Enviar solicitud';
+        btn.disabled = false;
+        alert('Ocurrió un error al enviar. Por favor intenta de nuevo.');
+      });
+  }
 
